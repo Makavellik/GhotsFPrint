@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="es" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🌌Simbiotico GhostScan - Poder Supremo Cósmico</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+    /* Reset y base */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+      font-family: 'Share Tech Mono', monospace;
+      background: radial-gradient(ellipse at center, #05010b 0%, #0a031d 90%);
+      overflow-x: hidden;
+      color: #050505;
+      user-select: none;
+      position: relative;
+      overflow-y: hidden;
+    }
+
+    /* Fondo galáctico líquido y pulsante */
+   
+    @keyframes galaxyLiquidPulse {
+      0% {
+        background-position:
+          center,
+          18% 25%,
+          80% 75%,
+          35% 50%,
+          65% 30%;
+        filter: blur(14px);
+      }
+      50% {
+        background-position:
+          2% 2%,
+          20% 27%,
+          78% 72%,
+          38% 55%,
+          62% 28%;
+        filter: blur(18px);
+      }
+      100% {
+        background-position:
+          center,
+          18% 25%,
+          80% 75%,
+          35% 50%,
+          65% 30%;
+        filter: blur(14px);
+      }
+    }
+
+    /* Contenedor principal */
+    main {
+      position: relative;
+      z-index: 20;
+      max-width: 900px;
+      margin: 3rem auto 5rem;
+      padding: 0 15px;
+      text-align: center;
+      user-select: text;
+      filter: drop-shadow(0 0 12px #00ffc3cc);
+    }
+
+    /* Título principal con 3D extremo, color cambiante, brillo dinámico y movimiento */
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 2.5rem;
+      color: #00ffcc;
+      position: relative;
+      animation:
+        glowPulse 3.5s ease-in-out infinite alternate,
+        rotateHue 18s linear infinite,
+        float3D 6s ease-in-out infinite;
+      text-shadow:
+        0 0 12px #00ffcc,
+        0 0 36px #00ffcc,
+        0 0 54px #00ffcc,
+        0 0 70px #00ffcc;
+      perspective: 700px;
+      transform-style: preserve-3d;
+      user-select: text;
+      cursor: default;
+    }
+    @keyframes glowPulse {
+      0%, 100% {
+        text-shadow:
+          0 0 12px #00ffcc,
+          0 0 36px #00ffcc,
+          0 0 54px #00ffcc,
+          0 0 70px #00ffcc;
+      }
+      50% {
+        text-shadow:
+          0 0 18px #00ffcc,
+          0 0 50px #00ffcc,
+          0 0 80px #00ffcc,
+          0 0 100px #00ffcc;
+      }
+    }
+    @keyframes rotateHue {
+      0% {
+        filter: hue-rotate(0deg);
+      }
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+    @keyframes float3D {
+      0%, 100% {
+        transform: translateZ(0) rotateY(0deg) translateY(0);
+      }
+      50% {
+        transform: translateZ(20px) rotateY(8deg) translateY(-15px);
+      }
+    }
+
+    /* Texto 3D secundario con pulso y brillo variable, sombra espectral */
+    h1::before, h1::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.3;
+      filter: blur(5px);
+      z-index: -1;
+      animation: text3dPulse 3.5s ease-in-out infinite alternate;
+      transform-origin: center center;
+      mix-blend-mode: screen;
+      user-select: none;
+    }
+    h1::before {
+      left: 4px;
+      color: #00ffcc;
+      text-shadow:
+        0 0 18px #00ffcc,
+        0 0 38px #00ffcc,
+        0 0 50px #00ffaa,
+        0 0 70px #00ffaa;
+      animation-delay: 0s;
+    }
+    h1::after {
+      left: -4px;
+      color: #00ffaa;
+      text-shadow:
+        0 0 30px #00ffaa,
+        0 0 50px #00ffaa,
+        0 0 90px #00ffcc,
+        0 0 100px #00ffcc;
+      animation-delay: 1.75s;
+    }
+    @keyframes text3dPulse {
+      0%, 100% {
+        transform: translateZ(0) rotateY(0deg);
+        opacity: 0.3;
+      }
+      50% {
+        transform: translateZ(12px) rotateY(7deg);
+        opacity: 0.7;
+      }
+    }
+
+    /* Input + button con brillo vivo y movimiento orgánico */
+    .input-container {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+      filter: drop-shadow(0 0 12px #00ffbbcc);
+      transition: filter 0.3s ease;
+    }
+    .input-container:hover {
+      filter: drop-shadow(0 0 26px #00ffbbdd);
+    }
+    input {
+      font-size: 1.35rem;
+      padding: 16px 20px;
+      width: 320px;
+      max-width: 90vw;
+      border: none;
+      border-radius: 14px;
+      background: rgba(0,255,187,0.15);
+      color: #00ffbb;
+      box-shadow:
+        inset 0 0 18px #00ffbb66;
+      transition: 0.4s ease, transform 0.3s ease;
+      user-select: text;
+      backdrop-filter: saturate(180%) blur(8px);
+      text-shadow: 0 0 4px #00ffbbcc;
+    }
+    input::placeholder {
+      color: #00ffbbaa;
+      user-select: none;
+      font-style: italic;
+      text-shadow: 0 0 3px #00ffbbaa;
+    }
+    input:focus {
+      outline: none;
+      background: rgba(0,255,187,0.35);
+      box-shadow:
+        0 0 20px #00ffbbee,
+        inset 0 0 32px #00ffbbcc;
+      transform: scale(1.05);
+    }
+    button {
+      font-size: 1.35rem;
+      padding: 16px 28px;
+      border-radius: 14px;
+      border: none;
+      color: #05010b;
+      background: linear-gradient(45deg, #00ffbb, #00ddb6);
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow:
+        0 0 18px #00ffbbcc;
+      transition: 0.45s ease, transform 0.45s ease;
+      user-select: none;
+      filter: drop-shadow(0 0 8px #00ffbbcc);
+      animation: buttonPulse 5s ease-in-out infinite;
+      letter-spacing: 0.1em;
+      font-family: 'Share Tech Mono', monospace;
+      text-transform: uppercase;
+      text-shadow:
+        0 0 6px #00ffbb,
+        0 0 12px #00ffbb;
+    }
+    button:hover {
+      background: linear-gradient(45deg, #00ddb6, #00ffbb);
+      box-shadow:
+        0 0 40px #00ffbbee,
+        0 0 55px #00ffbbcc;
+      filter: drop-shadow(0 0 18px #00ffbbee);
+      transform: scale(1.15);
+      animation-play-state: paused;
+    }
+    @keyframes buttonPulse {
+      0%, 100% {
+        box-shadow:
+          0 0 18px #00ffbbcc;
+        filter: drop-shadow(0 0 8px #00ffbbcc);
+      }
+      50% {
+        box-shadow:
+          0 0 40px #00ffbbee,
+          0 0 55px #00ffbbcc;
+        filter: drop-shadow(0 0 18px #00ffbbee);
+      }
+    }
+
+    /* Output con brillo, sombra y efecto "pantalla energética" */
+   /* Output con brillo, sombra y efecto "pantalla energética" */
+/* Versión responsive, legible y elegante */
+
+/* Output con brillo, sombra y efecto "pantalla energética" */
+/* Versión ultra calibrada y armoniosa */
+
+#output {
+  background: rgba(0, 255, 187, 0.18);
+  border-radius: 20px;
+  padding: 22px 28px;
+  font-size: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+  max-height: 58vh;
+  max-width: 88vw;
+  overflow-y: auto;
+  box-shadow:
+    0 0 20px #00ffbbaa,
+    inset 0 0 25px #00ffbb77;
+  user-select: text;
+  white-space: pre-wrap;
+  text-align: left;
+  color: #00ffc3;
+  letter-spacing: 0.055em;
+  line-height: 1.45;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
+  filter: drop-shadow(0 0 8px #00ffccbb);
+  margin: 1.2rem auto;
+  word-break: break-word;
+  box-sizing: border-box;
+}
+
+/* Hover: Intensifica brillo y sombra suavemente */
+#output:hover {
+  background: rgba(0, 255, 187, 0.28);
+  box-shadow:
+    0 0 38px #00ffccbb,
+    inset 0 0 45px #00ffbbcc;
+  filter: drop-shadow(0 0 14px #00ffccdd);
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 600px) {
+  #output {
+    font-size: 0.92rem;
+    max-height: 48vh;
+    padding: 18px 22px;
+  }
+}
+
+/* Para pantallas grandes */
+@media (min-width: 1200px) {
+  #output {
+    font-size: 1.12rem;
+    max-width: 72vw;
+  }
+}
+
+
+
+    /* Canvas de partículas con más brillo y glow */
+    #particles-canvas {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 15;
+      filter: drop-shadow(0 0 8px #00ffccdd);
+      transition: filter 0.5s ease;
+    }
+
+  </style>
+</head>
+<body>
+
+<div id="galaxy"></div>
+<canvas id="particles-canvas"></canvas>
+<footer class="firma-cosmica" id="firmaCosmica">
+  <div class="resonancia" id="resonanciaCosmica">
+    🌠 Todos los derechos cuánticos y eternos pertenecen a <strong>DonMakaveliw</strong> 🛡️<br>
+    <em>“No solo escribimos líneas de código... abrimos portales a la vibración suprema.”</em>
+    <audio id="sonidoCosmico" src="https://cdn.pixabay.com/download/audio/2022/10/27/audio_1f4ab61bbf.mp3?filename=healing-ambient-meditation-121104.mp3"></audio>
+  </div>
+</footer>
+
+<div id="portalCosmico"></div>
+<div id="constelacionesNocturnas"></div>
+
+<style>
+  /* Estilos firma cósmica */
+  .firma-cosmica {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(10, 0, 20, 0.15);
+    color: #ffffffd9;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    padding: 14px 12px;
+    box-shadow: 0 -2px 20px rgba(161, 0, 255, 0.35);
+    z-index: 9999;
+    user-select: none;
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    transition: opacity 3s ease-in-out, background 3s ease;
+  }
+
+  .firma-cosmica .resonancia {
+    animation: espiritualidad 10s infinite alternate ease-in-out;
+    font-size: 0.95rem;
+    letter-spacing: 1.1px;
+    position: relative;
+    z-index: 2;
+  }
+
+  @keyframes espiritualidad {
+    0% {
+      text-shadow: 0 0 6px #a100ff, 0 0 10px #ffffff;
+      transform: scale(1);
+    }
+    100% {
+      text-shadow: 0 0 16px #ffffff, 0 0 26px #a100ff;
+      transform: scale(1.015);
+    }
+  }
+
+  .destello-cosmico {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    width: 2px;
+    height: 0;
+    background: linear-gradient(to top, transparent, #ffffffaa, #ffffff);
+    animation: subirDestello 2.5s ease-out;
+    z-index: 1;
+  }
+
+  @keyframes subirDestello {
+    0% {
+      height: 0;
+      opacity: 0;
+    }
+    50% {
+      height: 60px;
+      opacity: 1;
+    }
+    100% {
+      height: 0;
+      opacity: 0;
+    }
+  }
+
+  /* Fondo de portales cósmicos */
+  #portalCosmico {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+    background: radial-gradient(ellipse at center, rgba(25,0,40,0.8) 0%, rgba(10,0,20,0.95) 100%);
+  }
+
+  .particula {
+    position: absolute;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    filter: drop-shadow(0 0 6px #b183ff);
+    opacity: 0.9;
+    animation: moverParticula linear infinite;
+  }
+
+  @keyframes moverParticula {
+    from {
+      transform: translateY(0) translateX(0) scale(1);
+      opacity: 0.9;
+    }
+    to {
+      transform: translateY(-120vh) translateX(20vw) scale(0.2);
+      opacity: 0;
+    }
+  }
+
+  /* Constelaciones nocturnas - modo místico */
+  #constelacionesNocturnas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 3s ease-in-out;
+    background: radial-gradient(ellipse at center, #15002b, #0a0014 90%);
+  }
+
+  .estrella {
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 6px 2px #fff;
+    opacity: 0.8;
+    animation: parpadeo 3s infinite ease-in-out alternate;
+  }
+
+  @keyframes parpadeo {
+    from {opacity: 0.4;}
+    to {opacity: 1;}
+  }
+
+  /* Aurora mística */
+  #aurora {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: linear-gradient(45deg, rgba(138,43,226,0.15), rgba(255,20,147,0.12), rgba(0,191,255,0.18), rgba(138,43,226,0.15));
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(70px);
+    animation: auroraMove 40s ease-in-out infinite alternate;
+  }
+
+  @keyframes auroraMove {
+    0% {background-position: 0% 50%;}
+    100% {background-position: 100% 50%;}
+  }
+</style>
+
+<div id="aurora"></div>
+
+<script>
+  // Función para crear estrellas aleatorias en modo nocturno
+  function crearEstrella() {
+    const constelaciones = document.getElementById("constelacionesNocturnas");
+    const estrella = document.createElement("div");
+    estrella.classList.add("estrella");
+
+    // Tamaño aleatorio entre 1 y 3 px
+    const size = Math.random() * 2 + 1;
+    estrella.style.width = `${size}px`;
+    estrella.style.height = `${size}px`;
+
+    // Posición aleatoria
+    estrella.style.top = `${Math.random() * 100}vh`;
+    estrella.style.left = `${Math.random() * 100}vw`;
+
+    // Animación parpadeo duración aleatoria
+    estrella.style.animationDuration = `${Math.random() * 3 + 2}s`;
+
+    constelaciones.appendChild(estrella);
+
+    // Remover después de un tiempo para refrescar constelaciones
+    setTimeout(() => {
+      constelaciones.removeChild(estrella);
+    }, 120000); // 2 minutos
+  }
+
+  // Cambiar fondo según hora (día/noche)
+  function getColorByHour() {
+    const hour = new Date().getHours();
+    if (hour >= 5 && hour < 12) {
+      return "rgba(255, 215, 0, 0.2)"; // Amanecer dorado
+    } else if (hour >= 12 && hour < 18) {
+      return "rgba(0, 191, 255, 0.2)"; // Tarde celeste
+    } else if (hour >= 18 && hour < 22) {
+      return "rgba(138, 43, 226, 0.25)"; // Atardecer místico
+    } else {
+      return "rgba(0, 0, 0, 0.3)"; // Medianoche etérea
+    }
+  }
+
+  // Mostrar/ocultar modo nocturno
+  function toggleModoNocturno(activo) {
+    const constelaciones = document.getElementById("constelacionesNocturnas");
+    const portal = document.getElementById("portalCosmico");
+    const aurora = document.getElementById("aurora");
+    if (activo) {
+      constelaciones.style.opacity = "1";
+      portal.style.background = "radial-gradient(ellipse at center, rgba(10,0,30,0.85) 0%, rgba(2,0,10,0.97) 100%)";
+      aurora.style.display = "block";
+    } else {
+      constelaciones.style.opacity = "0";
+      portal.style.background = getColorByHour();
+      aurora.style.display = "none";
+    }
+  }
+
+  function alternarFirma() {
+    const firma = document.getElementById("firmaCosmica");
+    const sonido = document.getElementById("sonidoCosmico");
+    const hour = new Date().getHours();
+
+    // Definir si modo nocturno activo (22h - 5h)
+    const modoNocturno = (hour >= 22 || hour < 5);
+    toggleModoNocturno(modoNocturno);
+
+    if (!firma) return;
+
+    // Cambiar background firma según hora (si no modo nocturno)
+    if (!modoNocturno) {
+      firma.style.background = getColorByHour();
+    } else {
+      firma.style.background = "rgba(15,0,35,0.5)";
+    }
+
+    if (firma.style.opacity === "1") {
+      firma.style.opacity = "0";
+      sonido.pause();
+      sonido.currentTime = 0;
+    } else {
+      firma.style.opacity = "1";
+      sonido.volume = 0.2;
+      sonido.play();
+
+      const destello = document.createElement("div");
+      destello.classList.add("destello-cosmico");
+      firma.appendChild(destello);
+
+      setTimeout(() => {
+        firma.removeChild(destello);
+      }, 2500);
+    }
+  }
+
+  function crearParticula() {
+    const portal = document.getElementById("portalCosmico");
+    const particula = document.createElement("div");
+    particula.classList.add("particula");
+
+    const size = Math.random() * 12 + 8;
+    particula.style.width = `${size}px`;
+    particula.style.height = `${size}px`;
+
+    const left = Math.random() * 100;
+    particula.style.left = `${left}vw`;
+
+    const duration = Math.random() * 15 + 10;
+    particula.style.animationDuration = `${duration}s`;
+    particula.style.animationDelay = `${Math.random() * 15}s`;
+
+    portal.appendChild(particula);
+
+    setTimeout(() => {
+      portal.removeChild(particula);
+    }, (duration + 15) * 1000);
+  }
+
+  function iniciarPortales() {
+    setInterval(crearParticula, 800);
+  }
+
+  function iniciarConstelaciones() {
+    setInterval(crearEstrella, 500);
+  }
+
+  window.addEventListener("load", () => {
+    const firma = document.getElementById("firmaCosmica");
+    firma.style.opacity = "1";
+
+    alternarFirma();
+    iniciarPortales();
+
+    // Inicia constelaciones solo si es modo nocturno
+    const hour = new Date().getHours();
+    if (hour >= 22 || hour < 5) {
+      const constelaciones = document.getElementById("constelacionesNocturnas");
+      constelaciones.style.opacity = "1";
+      iniciarConstelaciones();
+
+      const aurora = document.getElementById("aurora");
+      aurora.style.display = "block";
+    } else {
+      const aurora = document.getElementById("aurora");
+      aurora.style.display = "none";
+    }
+
+    setInterval(alternarFirma, 120000);
+  });
+</script>
+
+
+<main>
+  <h1 data-text="Escáner Simbiotico Avanzado">Escáner GhostScan Fingerprint Avanzado</h1>
+  <div class="input-container">
+    <input id="url" type="text" placeholder="https://dominio-especifico.com" autocomplete="off" />
+    <button onclick="startScan()">Iniciar Escaneo</button>
+  </div>
+  <pre id="output">Aquí aparecerá la información escaneada con toda la energía simbiotica...</pre>
+</main>
+
+<!-- Audio Cósmico Simbiótico -->
+<audio id="cosmic-audio" loop autoplay muted>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/17/audio_99577678d4.mp3?filename=space-ambience-11017.mp3" type="audio/mpeg" />
+  <!-- Link a un sonido ambiente espacial suave libre de derechos -->
+</audio>
+
+<script>
+  // Partículas y constelaciones que reaccionan a mouse y sonido
+  const canvas = document.getElementById('particles-canvas');
+  const ctx = canvas.getContext('2d');
+  let width, height, mouseX = null, mouseY = null;
+  const maxParticles = 160;
+  let particles = [];
+
+  // Más colores vivos con mezcla cromática y brillo
+  const colors = [
+    {r:0, g:255, b:187},   // cyan
+    {r:255, g:0, b:255},   // magenta
+    {r:0, g:150, b:255},   // azul
+    {r:255, g:100, b:0},   // naranja
+    {r:255, g:255, b:0},   // amarillo
+    {r:0, g:255, b:100},   // verde lima
+    {r:100, g:200, b:255}, // azul claro
+    {r:200, g:100, b:255}  // violeta
+  ];
+
+  // Análisis de audio para simbiosis única
+  const audio = document.getElementById('cosmic-audio');
+  let audioContext, analyser, source, dataArray;
+
+  function setupAudio() {
+    try {
+      audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      source = audioContext.createMediaElementSource(audio);
+      analyser = audioContext.createAnalyser();
+      source.connect(analyser);
+      analyser.connect(audioContext.destination);
+      analyser.fftSize = 256;
+      dataArray = new Uint8Array(analyser.frequencyBinCount);
+    } catch(e) {
+      console.warn("Audio context no disponible:", e);
+    }
+  }
+
+  function getAverageFrequency() {
+    if (!analyser) return 0;
+    analyser.getByteFrequencyData(dataArray);
+    let sum = 0;
+    for(let i = 0; i < dataArray.length; i++) sum += dataArray[i];
+    return sum / dataArray.length / 255;
+  }
+
+  function resize() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width * devicePixelRatio;
+    canvas.height = height * devicePixelRatio;
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+    ctx.scale(devicePixelRatio, devicePixelRatio);
+  }
+
+  class Particle {
+    constructor() {
+      this.x = Math.random() * width;
+      this.y = Math.random() * height;
+      this.z = Math.random() * 1000;
+      this.radius = Math.random() * 2.2 + 1.2;
+      this.speedX = (Math.random() - 0.5) * 0.7;
+      this.speedY = (Math.random() - 0.5) * 0.7;
+      this.speedZ = (Math.random() - 0.5) * 0.35;
+      this.colorIndex = Math.floor(Math.random() * colors.length);
+      this.alpha = 0.4 + Math.random() * 0.6;
+      this.alphaSpeed = 0.007 + Math.random() * 0.012;
+      this.alphaDir = 1;
+      this.breath = Math.random() * 0.02;
+    }
+    update(freqAmp = 0) {
+      // Movimiento base
+      this.x += this.speedX * (1 + freqAmp);
+      this.y += this.speedY * (1 + freqAmp);
+      this.z += this.speedZ * (1 + freqAmp);
+
+      if (this.z > 1000) this.z = 1000;
+      if (this.z < 0) this.z = 0;
+
+      if (this.x > width) this.x = 0;
+      if (this.x < 0) this.x = width;
+      if (this.y > height) this.y = 0;
+      if (this.y < 0) this.y = height;
+
+      // Alfa variable con "respiración"
+      this.alpha += (this.alphaSpeed + this.breath) * this.alphaDir * (1 + freqAmp*1.5);
+      if (this.alpha >= 1) this.alphaDir = -1;
+      else if (this.alpha <= 0.25) this.alphaDir = 1;
+    }
+    draw() {
+      const c = colors[this.colorIndex];
+      const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius * 7);
+      gradient.addColorStop(0, `rgba(${c.r}, ${c.g}, ${c.b}, ${this.alpha})`);
+      gradient.addColorStop(1, `rgba(0, 0, 0, 0)`);
+      ctx.fillStyle = gradient;
+      ctx.shadowColor = `rgba(${c.r}, ${c.g}, ${c.b}, ${this.alpha})`;
+      ctx.shadowBlur = 22;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius + this.z / 350, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.closePath();
+    }
+  }
+
+  function createParticles() {
+    particles = [];
+    for(let i = 0; i < maxParticles; i++) {
+      particles.push(new Particle());
+    }
+  }
+
+  function drawConstellations(freqAmp=0) {
+    ctx.lineCap = "round";
+    for(let i = 0; i < maxParticles; i++) {
+      for(let j = i + 1; j < maxParticles; j++) {
+        const p1 = particles[i];
+        const p2 = particles[j];
+        const dx = p1.x - p2.x;
+        const dy = p1.y - p2.y;
+        const dz = (p1.z - p2.z) / 2;
+        const dist = Math.sqrt(dx*dx + dy*dy + dz*dz);
+
+        if(dist < 130 && p1.z < 600 && p2.z < 600) {
+          const c1 = colors[p1.colorIndex];
+          const c2 = colors[p2.colorIndex];
+          const r = Math.floor((c1.r + c2.r) / 2);
+          const g = Math.floor((c1.g + c2.g) / 2);
+          const b = Math.floor((c1.b + c2.b) / 2);
+          const alpha = ((130 - dist) / 130 * 0.45) * (0.7 + freqAmp*1.3);
+
+          ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
+          ctx.lineWidth = 1.3 + freqAmp;
+          ctx.beginPath();
+          ctx.moveTo(p1.x, p1.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  function applyMouseEffect() {
+    if (mouseX === null || mouseY === null) return;
+    particles.forEach(p => {
+      const dx = p.x - mouseX;
+      const dy = p.y - mouseY;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      if (dist < 180) {
+        const force = (180 - dist) / 180 * 2.2;
+        p.x += dx / dist * force * 0.8;
+        p.y += dy / dist * force * 0.8;
+        p.alpha = Math.min(1, p.alpha + 0.04 + force*0.2);
+      }
+    });
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+    const freqAmp = getAverageFrequency();
+    applyMouseEffect();
+    drawConstellations(freqAmp);
+    for(let p of particles) {
+      p.update(freqAmp);
+      p.draw();
+    }
+    requestAnimationFrame(animate);
+  }
+
+  window.addEventListener('resize', () => {
+    resize();
+    createParticles();
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  window.addEventListener('mouseout', () => {
+    mouseX = null;
+    mouseY = null;
+  });
+
+  // Audio context y setup
+  setupAudio();
+
+  resize();
+  createParticles();
+  animate();
+
+
+  // ==== Fin partículas ====
+
+
+  // ==== Función para iniciar escaneo ====
+
+  async function startScan() {
+  const urlInput = document.getElementById("url");
+  const output = document.getElementById("output");
+  const url = urlInput.value.trim();
+
+  // Validación básica de entrada
+  if (!url) {
+    output.textContent = "⚠️ Por favor ingresa un dominio válido.";
+    urlInput.focus();
+    return;
+  }
+
+  // Validar formato URL simple
+  try {
+    const parsedUrl = new URL(url.startsWith("http") ? url : "http://" + url);
+    if (!parsedUrl.hostname) {
+      output.textContent = "⚠️ La URL no tiene un dominio válido.";
+      urlInput.focus();
+      return;
+    }
+  } catch {
+    output.textContent = "⚠️ Formato de URL inválido.";
+    urlInput.focus();
+    return;
+  }
+
+  output.textContent = "⏳ Escaneando dominio... espera un momento...";
+
+  try {
+    const res = await fetch("/scan", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ url }),
+    });
+
+    // Validar respuesta HTTP
+    if (!res.ok) {
+      output.textContent = `❌ Error en la respuesta del servidor: ${res.status} ${res.statusText}`;
+      return;
+    }
+
+    const data = await res.json();
+
+    if (!data) {
+      output.textContent = "❌ Respuesta vacía o malformada del servidor.";
+      return;
+    }
+
+    if (data.error) {
+      output.textContent = "❌ Error: " + data.error;
+      return;
+    }
+
+    output.textContent =
+      "=== Fingerprint Avanzado ===\n" +
+      JSON.stringify(data.fingerprint, null, 2) +
+      "\n\n=== HTML Renderizado (Primeros 2000 caracteres) ===\n" +
+      (typeof data.html === "string" ? data.html.substring(0, 2000) : "");
+
+  } catch (e) {
+    if (e.name === "TypeError") {
+      output.textContent = "❌ Error de conexión o CORS: " + e.message;
+    } else {
+      output.textContent = "❌ Error inesperado: " + e.message;
+    }
+  }
+}
+
+
+</script>
+
+
+</body>
+</html>
